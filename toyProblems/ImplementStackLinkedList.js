@@ -31,12 +31,13 @@ class Stack {
   pop() {
     //Removes from top of stack
     if (!this.top) {
-      console.log('Stack is empty')
       return this;
     }
     this.top = this.top.next;
     this.length--; 
-    if (this.length == 0) this.bottom = null;
+    if (this.length == 0) {
+      this.bottom = null;
+    }
     return this;
   }
   
@@ -59,7 +60,10 @@ class Stack {
   }
 }
 
+console.clear();
 const myStack = new Stack();
 myStack.push(19);
+console.log(myStack.pop());
+console.log(myStack.pop());
 console.log(myStack.pop());
 

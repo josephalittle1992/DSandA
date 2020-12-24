@@ -59,4 +59,6 @@ console.log(myStack.pop());
 console.log(myStack.isEmpty());
 console.log(myStack.peek());
 
-
+//NOTE - YOU DO NOT NEED .TOP .BOTTOM .LENGTH, JUSE USE BUILT
+//IN ARRAY FUNCTIONS.  RETURNS OF UNDEFINED OKAY BUT COULD BE BETTER WHEN CALLING
+//.PEEK() AND ARRAY IS EMPTY
