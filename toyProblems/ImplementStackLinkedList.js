@@ -12,7 +12,7 @@ class Stack {
     this.length = 0;
   }
   peek() {
-    return this.top.value;
+    return this.top;
   }
 
   push(value) {
@@ -21,19 +21,23 @@ class Stack {
     if (!this.length) {
       this.top = newNode;
       this.bottom = this.top;
-      newNode.next = null;
     } else {
       newNode.next = this.top;
       this.top = newNode;
     }
-
     this.length++;
+    return this;
   }
   pop() {
     //Removes from top of stack
+    if (!this.top) {
+      console.log('Stack is empty')
+      return this;
+    }
     this.top = this.top.next;
     this.length--; 
     if (this.length == 0) this.bottom = null;
+    return this;
   }
   
   isEmpty() {
@@ -56,9 +60,6 @@ class Stack {
 }
 
 const myStack = new Stack();
-myStack.push(5);
-myStack.push(5);
-myStack.pop();
-console.log(myStack.isEmpty());
-console.log(myStack);
-console.log(myStack.printStack());
+myStack.push(19);
+console.log(myStack.pop());
+
