@@ -12,12 +12,7 @@ class Node {
       this.length = 0;
     }
     peek() {
-        if (this.first) {
             return this.first;
-        } else {
-            return null;
-        }
-        
     }
     enqueue(value){
         const newNode = new Node(value);
@@ -32,16 +27,15 @@ class Node {
         this.length++;
     }
     dequeue(){
+        if (!this.first) return null;
         if (this.first === this.last) {
-            this.first = null;
             this.last = null;
-            this.length = 0;
-        } else {
-            this.first = this.first.next;
-            this.length--;
         }
-        
-        
+        const holdingPointer = this.first; //keep access to first person
+        this.first = this.first.next;
+        this.length--;
+        return this
+
     }
     
   }
